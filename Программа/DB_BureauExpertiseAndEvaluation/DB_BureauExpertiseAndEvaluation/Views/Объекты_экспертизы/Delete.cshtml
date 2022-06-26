@@ -1,0 +1,57 @@
+﻿@model DB_BureauExpertiseAndEvaluation.Объекты_экспертизы
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Объекты экспертизы</h2>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Наименование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Вид)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Вид)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Недвижимость.Адрес)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Недвижимость.Адрес)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Техника.Серийный_номер)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Техника.Серийный_номер)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться назад", "Index")
+        </div>
+    }
+</div>

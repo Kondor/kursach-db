@@ -1,0 +1,51 @@
+﻿@model DB_BureauExpertiseAndEvaluation.Отдел
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Отдел</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Наименование_отдела)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Наименование_отдела)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Начальник_отдела)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Начальник_отдела)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Телефон)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Телефон)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Зам_начальника)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Зам_начальника)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Ид_отдела }) |
+    @Html.ActionLink("Вернуться назад", "Index")
+</p>

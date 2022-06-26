@@ -1,0 +1,119 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Сотрудники>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<h2>Список сотрудников</h2>
+<br>
+<br>
+
+@using (@Html.BeginForm())
+{
+<h3>@Html.Label("Поиск сотрудника")</h3>
+    @Html.Label("Введите имя")
+    <p> @Html.TextBox("name", "", new { placeholder = "Никита" })</p>
+    @Html.Label("Введите фамилию")
+    <p> @Html.TextBox("surname", "", new { placeholder = "Филиппов" })</p>
+
+    <h3>@Html.Label("Фильтр по отделам")</h3>
+    @Html.Label("Выберите отдел")
+    <p>
+        @Html.DropDownList("text",
+     new SelectList(new[] { "Все", "Недвижимости", "Техники" },
+     new { @class = "form-control" }))
+    </p>
+
+    <input type="submit" value="Фильтр" />
+}
+
+<br>
+<br>
+
+
+@using (@Html.BeginForm())
+{
+
+
+    <h4>@Html.ActionLink("Узнать изменение зарплаты сотрудника в зависимости от его работы", "printFuncZarplata", "Сотрудники")</h4>
+
+}
+
+<br />
+<br />
+<p>
+    @Html.ActionLink("Добавить нового сотрудника", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Отчество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_рождения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Адрес_проживания)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Стаж)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Телефон)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Зарплата)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Отдел.Наименование_отдела)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Фамилия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Имя)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Отчество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_рождения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Адрес_проживания)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Стаж)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Телефон)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Зарплата)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Отдел.Наименование_отдела)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Ид_сотрудника }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.Ид_сотрудника }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Ид_сотрудника })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Клиенты>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Клиенты</h2>
+<br /><br />
+<p>
+    @Html.ActionLink("Добавить нового клиента", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ид_клиента)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Паспорта.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Паспорта.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Паспорта.Отчество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Телефон)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Эл_почта)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ид_клиента)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Паспорта.Фамилия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Паспорта.Имя)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Паспорта.Отчество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Телефон)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Эл_почта)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Ид_клиента }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.Ид_клиента }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Ид_клиента })
+            </td>
+        </tr>
+    }
+
+</table>

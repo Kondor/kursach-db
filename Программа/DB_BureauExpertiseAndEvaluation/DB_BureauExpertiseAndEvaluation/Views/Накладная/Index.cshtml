@@ -1,0 +1,115 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Накладная>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Накладная</h2>
+
+<br>
+Отобразить открытые накладные? 
+@using (@Html.BeginForm())
+{
+    <p>@Html.CheckBox("value")</p>
+
+    <br />
+   <h4>@Html.Label("Закрыть накладные за сотрудником по серии и номеру паспорта")</h4>
+    
+    @Html.Label("Введите серию паспорта")
+    <p> @Html.TextBox("series", "", new { placeholder = "7315" })</p>
+    @Html.Label("Введите номер паспорта")
+    <p> @Html.TextBox("number", "", new { placeholder = "349101" })</p>
+
+    <p><input type="submit" value="ОК" /></p>
+}
+<br>
+<br>
+@using (@Html.BeginForm())
+{
+
+
+    <h4>@Html.ActionLink("Узнать прогнозируемый доход", "printFuncProgDohod", "Накладная")</h4>
+
+}
+<br />
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Номер)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_приёма)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Срок_выполнения_диагностики)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Причина_обращения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Состояние_объекта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Статус)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Примерная_стоимость_экспертизы)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ид_клиента)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Объекты_экспертизы.Наименование)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Сотрудники.Фамилия)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_приёма)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Срок_выполнения_диагностики)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Причина_обращения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Состояние_объекта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Статус)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Примерная_стоимость_экспертизы)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ид_клиента)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Объекты_экспертизы.Наименование)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Сотрудники.Фамилия)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Номер }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.Номер }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Номер })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.funcProgDohod_Result>
+@{
+    ViewBag.Title = "printFuncProgDohod";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Вычислить прогнозируемый доход</h2>
+<br />
+@using (@Html.BeginForm())
+{
+    
+        @Html.Label("Введите первую дату диапазона")
+        <p> @Html.TextBox("dateTimeFirst","", new { placeholder = "Ввести дату: 01.01.2019" })</p>
+        @Html.Label("Введите вторую дату диапазона")
+        <p> @Html.TextBox("dateTimeSecond", "", new { placeholder = "Ввести дату: 01.05.2020" })</p>
+        <input type="submit" value="ОК" />
+}
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Количество_обработанных_накладных)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Прогнозируемый_доход)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Количество_обработанных_накладных)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Прогнозируемый_доход)
+            </td>
+        </tr>
+    }
+
+</table>
+
+

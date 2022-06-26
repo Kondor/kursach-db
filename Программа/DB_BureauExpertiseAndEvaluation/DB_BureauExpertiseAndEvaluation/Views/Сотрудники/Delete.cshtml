@@ -1,0 +1,129 @@
+﻿@model DB_BureauExpertiseAndEvaluation.Сотрудники
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Сотрудники</h2>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Фамилия)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Имя)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Имя)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Отчество)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Отчество)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_рождения)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_рождения)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Адрес_проживания)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Адрес_проживания)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Стаж)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Стаж)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Телефон)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Телефон)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Номер_трудовой_книжки)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Номер_трудовой_книжки)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ИНН)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ИНН)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Зарплата)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Зарплата)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Серия_паспорта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Серия_паспорта)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Номер_паспорта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Номер_паспорта)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Отдел.Наименование_отдела)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Отдел.Наименование_отдела)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться назад", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Объекты_экспертизы>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Объекты экспертизы</h2>
+
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ид_объекта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Наименование)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Вид)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Недвижимость.Адрес)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Техника.Серийный_номер)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ид_объекта)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Наименование)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Вид)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Недвижимость.Адрес)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Техника.Серийный_номер)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.Ид_объекта }) |
+            @Html.ActionLink("Подробнее", "Details", new { id=item.Ид_объекта }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Ид_объекта })
+        </td>
+    </tr>
+}
+
+</table>

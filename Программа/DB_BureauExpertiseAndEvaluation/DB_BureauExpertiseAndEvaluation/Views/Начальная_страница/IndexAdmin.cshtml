@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<body style="font-family:Verdana; font-size: 1.5em ">
+    <div>
+        <h1>Добрый день! Вы зашли под правом администратор! </h1>
+        <p>
+            Для редактирования данных вам доступна следующая информация
+        </p>
+        <br />
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Клиенты", "Index", "Клиенты")</button>
+        <br />
+        <br />
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Квитанция", "Index", "Квитанция")</button>
+        <br /><br />
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Накладная", "Index", "Накладная")</button>
+        <br /><br />
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Недвижимость", "Index", "Недвижимость")</button>
+        <br /><br />
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Объекты экспертизы", "Index", "Объекты_экспертизы")</button>
+        <br /><br />
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Отдел", "Index", "Отдел")</button>
+        <br /><br />
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Паспорта", "Index", "Паспорта")</button>
+        <br /><br />
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Сотрудники", "Index", "Сотрудники")</button>
+        <br /><br />
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Техника", "Index", "Техника")</button>
+        <br /><br />
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Экспертиза и оценка", "Index", "Экспертиза_и_оценка")</button>
+        <br /><br />
+
+    </div>
+</body>
+

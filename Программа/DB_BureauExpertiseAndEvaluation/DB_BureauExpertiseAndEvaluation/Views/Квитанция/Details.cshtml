@@ -1,0 +1,50 @@
+﻿@model DB_BureauExpertiseAndEvaluation.Квитанция
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Квитанция</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Стоимость_экспертизы)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Стоимость_экспертизы)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Оценка)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Оценка)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Решение)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Решение)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Экспертиза_и_оценка.Вид_диагностики)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Экспертиза_и_оценка.Вид_диагностики)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Номер }) |
+    @Html.ActionLink("Вернуться назад", "Index")
+</p>

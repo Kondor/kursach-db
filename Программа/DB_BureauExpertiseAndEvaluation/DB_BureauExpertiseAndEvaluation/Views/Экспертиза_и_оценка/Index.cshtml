@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Экспертиза_и_оценка>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Экспертиза и оценка</h2>
+<br /><br />
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ид_диагностики)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Вид_диагностики)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Количество_дней)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Объекты_экспертизы.Наименование)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ид_диагностики)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Вид_диагностики)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Количество_дней)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Объекты_экспертизы.Наименование)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.Ид_диагностики }) |
+            @Html.ActionLink("Подробнее", "Details", new { id=item.Ид_диагностики }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Ид_диагностики })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,67 @@
+﻿@model DB_BureauExpertiseAndEvaluation.Недвижимость
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Недвижимость</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Адрес)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Адрес)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Район)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Район)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Количество_комнат)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Количество_комнат)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Площадь)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Площадь)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Тип_постройки)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Тип_постройки)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Объекты_экспертизы.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Объекты_экспертизы.Наименование)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Ид_объекта }) |
+    @Html.ActionLink("Вернуться назад", "Index")
+</p>

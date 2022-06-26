@@ -1,0 +1,67 @@
+﻿@model DB_BureauExpertiseAndEvaluation.Техника
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Техника</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Год_производства)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Год_производства)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Серийный_номер)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Серийный_номер)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Цена_при_покупке)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Цена_при_покупке)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Компания_производитель)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Компания_производитель)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Модель)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Модель)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Объекты_экспертизы.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Объекты_экспертизы.Наименование)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Редактировать", "Edit", new { id = Model.Ид_объекта }) |
+    @Html.ActionLink("Вернуться назад", "Index")
+</p>

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Клиенты>
+
+@{
+    ViewBag.Title = "IndexUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+<h2>Клиенты</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Телефон)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Эл_почта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Паспорта.Адрес)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Телефон)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Эл_почта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Паспорта.Адрес)
+            </td>
+            <td>
+                @Html.ActionLink("Подробнее", "DetailsUser", new { id = item.Ид_клиента })
+            </td>
+        </tr>
+    }
+
+</table>

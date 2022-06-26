@@ -1,0 +1,52 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Отдел>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Отдел</h2>
+<br /><br />
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Наименование_отдела)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Начальник_отдела)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Телефон)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Зам_начальника)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Наименование_отдела)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Начальник_отдела)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Телефон)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Зам_начальника)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.Ид_отдела }) |
+            @Html.ActionLink("Подробнее", "Details", new { id=item.Ид_отдела }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Ид_отдела })
+        </td>
+    </tr>
+}
+
+</table>

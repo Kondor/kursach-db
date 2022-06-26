@@ -1,0 +1,85 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Накладная>
+
+@{
+    ViewBag.Title = "IndexUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+
+}
+
+<h2>Накладные</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Номер)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_приёма)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Срок_выполнения_диагностики)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Причина_обращения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Состояние_объекта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Статус)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Примерная_стоимость_экспертизы)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Клиенты.Ид_клиента)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Объекты_экспертизы.Наименование)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Сотрудники.Фамилия)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Номер)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Дата_приёма)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Срок_выполнения_диагностики)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Причина_обращения)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Состояние_объекта)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Статус)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Примерная_стоимость_экспертизы)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Клиенты.Ид_клиента)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Объекты_экспертизы.Наименование)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Сотрудники.Фамилия)
+        </td>
+        <td>
+            @Html.ActionLink("Подробнее", "DetailsUser", new { id=item.Номер }) |
+        </td>
+    </tr>
+}
+
+</table>

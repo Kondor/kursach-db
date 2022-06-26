@@ -1,0 +1,90 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Паспорта>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Паспорта клиентов</h2>
+<br>
+<br>
+@using (@Html.BeginForm())
+{
+    @Html.Label("Поиск клиента по имени и фамилии")
+    <br /><br />
+    @Html.Label("Введите имя")
+    <p> @Html.TextBox("name")</p>
+    @Html.Label("Введите фамилию")
+    <p> @Html.TextBox("surname")</p>
+    <input type="submit" value="ОК" />
+}
+<br />
+<br />
+<p>
+    @Html.ActionLink("Добавить нового клиента", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Номер_паспорта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Серия_паспорта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Адрес)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Имя)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Отчество)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Дата_рождения)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Пол)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер_паспорта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Серия_паспорта)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Адрес)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Фамилия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Имя)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Отчество)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Дата_рождения)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Пол)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Номер_паспорта }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.Номер_паспорта }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Номер_паспорта })
+            </td>
+        </tr>
+    }
+
+</table>

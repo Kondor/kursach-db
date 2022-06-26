@@ -1,0 +1,100 @@
+﻿@model DB_BureauExpertiseAndEvaluation.Паспорта
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Паспорта клиентов</h2>
+<br>
+<br>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Серия_паспорта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Серия_паспорта)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_выдачи)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_выдачи)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_окончания)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_окончания)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Адрес)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Адрес)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Фамилия)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Имя)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Имя)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Отчество)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Отчество)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_рождения)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_рождения)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Пол)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Пол)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться назад", "Index")
+        </div>
+    }
+</div>

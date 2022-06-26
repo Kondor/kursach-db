@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище DB_ModelContainer" CdmEntityContainer="Бюро_экспертизы_и_оценкиEntities">
+    <EntitySetMapping Name="Квитанция">
+      <EntityTypeMapping TypeName="DB_Model.Квитанция">
+        <MappingFragment StoreEntitySet="Квитанция">
+          <ScalarProperty Name="Номер" ColumnName="Номер" />
+          <ScalarProperty Name="Стоимость_экспертизы" ColumnName="Стоимость экспертизы" />
+          <ScalarProperty Name="Оценка" ColumnName="Оценка" />
+          <ScalarProperty Name="Решение" ColumnName="Решение" />
+          <ScalarProperty Name="Ид_диагностики" ColumnName="Ид диагностики" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Клиенты">
+      <EntityTypeMapping TypeName="DB_Model.Клиенты">
+        <MappingFragment StoreEntitySet="Клиенты">
+          <ScalarProperty Name="Ид_клиента" ColumnName="Ид клиента" />
+          <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+          <ScalarProperty Name="Эл_почта" ColumnName="Эл почта" />
+          <ScalarProperty Name="Номер_паспорта" ColumnName="Номер паспорта" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Накладная">
+      <EntityTypeMapping TypeName="DB_Model.Накладная">
+        <MappingFragment StoreEntitySet="Накладная">
+          <ScalarProperty Name="Номер" ColumnName="Номер" />
+          <ScalarProperty Name="Дата_приёма" ColumnName="Дата приёма" />
+          <ScalarProperty Name="Срок_выполнения_диагностики" ColumnName="Срок выполнения диагностики" />
+          <ScalarProperty Name="Причина_обращения" ColumnName="Причина обращения" />
+          <ScalarProperty Name="Состояние_объекта" ColumnName="Состояние объекта" />
+          <ScalarProperty Name="Статус" ColumnName="Статус" />
+          <ScalarProperty Name="Примерная_стоимость_экспертизы" ColumnName="Примерная стоимость экспертизы" />
+          <ScalarProperty Name="Ид_клиента" ColumnName="Ид клиента" />
+          <ScalarProperty Name="Ид_сотрудника" ColumnName="Ид сотрудника" />
+          <ScalarProperty Name="Ид_объекта" ColumnName="Ид объекта" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Недвижимость">
+      <EntityTypeMapping TypeName="DB_Model.Недвижимость">
+        <MappingFragment StoreEntitySet="Недвижимость">
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+          <ScalarProperty Name="Район" ColumnName="Район" />
+          <ScalarProperty Name="Ид_объекта" ColumnName="Ид объекта" />
+          <ScalarProperty Name="Количество_комнат" ColumnName="Количество комнат" />
+          <ScalarProperty Name="Площадь" ColumnName="Площадь" />
+          <ScalarProperty Name="Тип_постройки" ColumnName="Тип постройки" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Объекты_экспертизы">
+      <EntityTypeMapping TypeName="DB_Model.Объекты_экспертизы">
+        <MappingFragment StoreEntitySet="Объекты экспертизы">
+          <ScalarProperty Name="Ид_объекта" ColumnName="Ид объекта" />
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+          <ScalarProperty Name="Вид" ColumnName="Вид" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Отдел">
+      <EntityTypeMapping TypeName="DB_Model.Отдел">
+        <MappingFragment StoreEntitySet="Отдел">
+          <ScalarProperty Name="Ид_отдела" ColumnName="Ид отдела" />
+          <ScalarProperty Name="Наименование_отдела" ColumnName="Наименование отдела" />
+          <ScalarProperty Name="Начальник_отдела" ColumnName="Начальник отдела" />
+          <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+          <ScalarProperty Name="Зам_начальника" ColumnName="Зам начальника" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Паспорта">
+      <EntityTypeMapping TypeName="DB_Model.Паспорта">
+        <MappingFragment StoreEntitySet="Паспорта">
+          <ScalarProperty Name="Номер_паспорта" ColumnName="Номер паспорта" />
+          <ScalarProperty Name="Серия_паспорта" ColumnName="Серия паспорта" />
+          <ScalarProperty Name="Дата_выдачи" ColumnName="Дата выдачи" />
+          <ScalarProperty Name="Дата_окончания" ColumnName="Дата окончания" />
+          <ScalarProperty Name="Адрес" ColumnName="Адрес" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Дата_рождения" ColumnName="Дата рождения" />
+          <ScalarProperty Name="Пол" ColumnName="Пол" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Сотрудники">
+      <EntityTypeMapping TypeName="DB_Model.Сотрудники">
+        <MappingFragment StoreEntitySet="Сотрудники">
+          <ScalarProperty Name="Ид_сотрудника" ColumnName="Ид сотрудника" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Имя" ColumnName="Имя" />
+          <ScalarProperty Name="Отчество" ColumnName="Отчество" />
+          <ScalarProperty Name="Дата_рождения" ColumnName="Дата рождения" />
+          <ScalarProperty Name="Адрес_проживания" ColumnName="Адрес проживания" />
+          <ScalarProperty Name="Стаж" ColumnName="Стаж" />
+          <ScalarProperty Name="Телефон" ColumnName="Телефон" />
+          <ScalarProperty Name="Номер_трудовой_книжки" ColumnName="Номер трудовой книжки" />
+          <ScalarProperty Name="ИНН" ColumnName="ИНН" />
+          <ScalarProperty Name="Зарплата" ColumnName="Зарплата" />
+          <ScalarProperty Name="Серия_паспорта" ColumnName="Серия паспорта" />
+          <ScalarProperty Name="Номер_паспорта" ColumnName="Номер паспорта" />
+          <ScalarProperty Name="Ид_отдела" ColumnName="Ид отдела" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Техника">
+      <EntityTypeMapping TypeName="DB_Model.Техника">
+        <MappingFragment StoreEntitySet="Техника">
+          <ScalarProperty Name="Год_производства" ColumnName="Год производства" />
+          <ScalarProperty Name="Серийный_номер" ColumnName="Серийный номер" />
+          <ScalarProperty Name="Цена_при_покупке" ColumnName="Цена при покупке" />
+          <ScalarProperty Name="Ид_объекта" ColumnName="Ид объекта" />
+          <ScalarProperty Name="Компания_производитель" ColumnName="Компания производитель" />
+          <ScalarProperty Name="Модель" ColumnName="Модель" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Экспертиза_и_оценка">
+      <EntityTypeMapping TypeName="DB_Model.Экспертиза_и_оценка">
+        <MappingFragment StoreEntitySet="Экспертиза и оценка">
+          <ScalarProperty Name="Ид_диагностики" ColumnName="Ид диагностики" />
+          <ScalarProperty Name="Ид_объекта" ColumnName="Ид объекта" />
+          <ScalarProperty Name="Вид_диагностики" ColumnName="Вид диагностики" />
+          <ScalarProperty Name="Количество_дней" ColumnName="Количество дней" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="funcZarplata" FunctionName="Хранилище DB_Model.funcZarplata">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Model.funcZarplata_ResultF">
+          <ScalarProperty Name="Ид_сотрудника" ColumnName="Ид_сотрудника" />
+          <ScalarProperty Name="Фамилия" ColumnName="Фамилия" />
+          <ScalarProperty Name="Зарплата" ColumnName="Зарплата" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="procEditNaklad" FunctionName="Хранилище DB_Model.procEditNaklad" />
+    <FunctionImportMapping FunctionImportName="funcProgDohod" FunctionName="Хранилище DB_Model.funcProgDohod">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DB_Model.funcProgDohod_Result">
+          <ScalarProperty Name="Количество_обработанных_накладных" ColumnName="Количество обработанных накладных" />
+          <ScalarProperty Name="Прогнозируемый_доход" ColumnName="Прогнозируемый доход" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

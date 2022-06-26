@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.funcZarplata_ResultF>
+@{
+    ViewBag.Title = "pr";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Узнать изменение зарплаты сотрудника</h2>
+
+@using (@Html.BeginForm())
+{
+    @Html.Label("Введите ид сотрудника")
+    <p> @Html.TextBox("Id", "", new { placeholder = "1, 2, 3 и т.д." })</p>
+
+
+    @*@Html.ActionLink("Фильтр", "pr", "Сотрудники")*@
+    <input type="submit" value="Фильтр" />
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ид_сотрудника)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Фамилия)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Зарплата)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ид_сотрудника)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Фамилия)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Зарплата)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "IndexUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+
+<body style="font-family:Verdana; font-size: 1.5em ">
+    <div>
+        <h1>Добрый день! Вы зашли под правом пользователя! </h1>
+        <p>
+            Для просмотра вам доступны следующие данные:
+        </p>
+        <br />
+
+
+        <button class="btn btn-primary btn-lg" style="background-color:#ffffff; text-decoration:none;">@Html.ActionLink("Накладная", "IndexUser", "Накладная")</button>
+        <br /><br />
+    </div>
+</body>
+

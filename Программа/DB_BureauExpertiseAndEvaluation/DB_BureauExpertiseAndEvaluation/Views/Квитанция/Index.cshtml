@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Квитанция>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Квитанция</h2>
+<br />
+<br />
+@using (@Html.BeginForm())
+{
+    <h3>@Html.Label("Фильтрация стоимости экспертизы")</h3>
+    @Html.Label("Первое значение диапазона ")
+    @Html.TextBox("firstValue", "", new { placeholder = "Ввести стоимость: 5000" })
+    <br />
+    @Html.Label("Второе значение диапазона")
+    @Html.TextBox("secondValue", "", new { placeholder = "Ввести стоимость: 10000" })
+
+    <br />
+    <input type="submit" value="Фильтр" />
+}
+<br />
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Номер)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Стоимость_экспертизы)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Оценка)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Решение)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Экспертиза_и_оценка.Вид_диагностики)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Экспертиза_и_оценка.Ид_объекта)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Номер)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Стоимость_экспертизы)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Оценка)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Решение)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Экспертиза_и_оценка.Вид_диагностики)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Экспертиза_и_оценка.Ид_объекта)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Edit", new { id = item.Номер }) |
+                @Html.ActionLink("Подробнее", "Details", new { id = item.Номер }) |
+                @Html.ActionLink("Удалить", "Delete", new { id = item.Номер })
+            </td>
+        </tr>
+    }
+
+</table>

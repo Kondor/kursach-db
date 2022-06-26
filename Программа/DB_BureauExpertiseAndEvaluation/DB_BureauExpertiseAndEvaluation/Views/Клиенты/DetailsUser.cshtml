@@ -1,0 +1,42 @@
+﻿@model DB_BureauExpertiseAndEvaluation.Клиенты
+
+@{
+    ViewBag.Title = "DetailsUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Клиенты</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Телефон)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Телефон)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Эл_почта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Эл_почта)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Паспорта.Адрес)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Паспорта.Адрес)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Вернуться назад", "IndexUser")
+</p>

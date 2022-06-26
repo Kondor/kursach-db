@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище DB_Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Квитанция">
+    <Key>
+      <PropertyRef Name="Номер" />
+    </Key>
+    <Property Name="Номер" Type="int" Nullable="false" />
+    <Property Name="Стоимость экспертизы" Type="money" Nullable="false" />
+    <Property Name="Оценка" Type="money" Nullable="false" />
+    <Property Name="Решение" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ид диагностики" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Клиенты">
+    <Key>
+      <PropertyRef Name="Ид клиента" />
+    </Key>
+    <Property Name="Ид клиента" Type="int" Nullable="false" />
+    <Property Name="Телефон" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Эл почта" Type="nvarchar" MaxLength="50" />
+    <Property Name="Номер паспорта" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Накладная">
+    <Key>
+      <PropertyRef Name="Номер" />
+    </Key>
+    <Property Name="Номер" Type="int" Nullable="false" />
+    <Property Name="Дата приёма" Type="datetime" />
+    <Property Name="Срок выполнения диагностики" Type="datetime" />
+    <Property Name="Причина обращения" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Состояние объекта" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Статус" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Примерная стоимость экспертизы" Type="money" Nullable="false" />
+    <Property Name="Ид клиента" Type="int" Nullable="false" />
+    <Property Name="Ид сотрудника" Type="int" Nullable="false" />
+    <Property Name="Ид объекта" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Недвижимость">
+    <Key>
+      <PropertyRef Name="Ид объекта" />
+    </Key>
+    <Property Name="Адрес" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Район" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ид объекта" Type="int" Nullable="false" />
+    <Property Name="Количество комнат" Type="smallint" Nullable="false" />
+    <Property Name="Площадь" Type="real" Nullable="false" />
+    <Property Name="Тип постройки" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Объекты экспертизы">
+    <Key>
+      <PropertyRef Name="Ид объекта" />
+    </Key>
+    <Property Name="Ид объекта" Type="int" Nullable="false" />
+    <Property Name="Наименование" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Вид" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Отдел">
+    <Key>
+      <PropertyRef Name="Ид отдела" />
+    </Key>
+    <Property Name="Ид отдела" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Наименование отдела" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Начальник отдела" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Телефон" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Зам начальника" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Паспорта">
+    <Key>
+      <PropertyRef Name="Номер паспорта" />
+    </Key>
+    <Property Name="Номер паспорта" Type="int" Nullable="false" />
+    <Property Name="Серия паспорта" Type="int" Nullable="false" />
+    <Property Name="Дата выдачи" Type="date" />
+    <Property Name="Дата окончания" Type="date" />
+    <Property Name="Адрес" Type="nvarchar" MaxLength="50" />
+    <Property Name="Фамилия" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Отчество" Type="nvarchar" MaxLength="50" />
+    <Property Name="Дата рождения" Type="date" Nullable="false" />
+    <Property Name="Пол" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Сотрудники">
+    <Key>
+      <PropertyRef Name="Ид сотрудника" />
+    </Key>
+    <Property Name="Ид сотрудника" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Фамилия" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Имя" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Отчество" Type="nvarchar" MaxLength="50" />
+    <Property Name="Дата рождения" Type="date" Nullable="false" />
+    <Property Name="Адрес проживания" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Стаж" Type="smallint" Nullable="false" />
+    <Property Name="Телефон" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="Номер трудовой книжки" Type="int" Nullable="false" />
+    <Property Name="ИНН" Type="bigint" />
+    <Property Name="Зарплата" Type="money" Nullable="false" />
+    <Property Name="Серия паспорта" Type="int" Nullable="false" />
+    <Property Name="Номер паспорта" Type="int" Nullable="false" />
+    <Property Name="Ид отдела" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Техника">
+    <Key>
+      <PropertyRef Name="Ид объекта" />
+    </Key>
+    <Property Name="Год производства" Type="smallint" />
+    <Property Name="Серийный номер" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Цена при покупке" Type="money" />
+    <Property Name="Ид объекта" Type="int" Nullable="false" />
+    <Property Name="Компания производитель" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Модель" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Экспертиза и оценка">
+    <Key>
+      <PropertyRef Name="Ид диагностики" />
+    </Key>
+    <Property Name="Ид диагностики" Type="int" Nullable="false" />
+    <Property Name="Ид объекта" Type="int" Nullable="false" />
+    <Property Name="Вид диагностики" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Количество дней" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Клиенты_Паспорта">
+    <End Role="Паспорта" Type="Self.Паспорта" Multiplicity="1" />
+    <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Паспорта">
+        <PropertyRef Name="Номер паспорта" />
+      </Principal>
+      <Dependent Role="Клиенты">
+        <PropertyRef Name="Номер паспорта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Накладная_Клиенты">
+    <End Role="Клиенты" Type="Self.Клиенты" Multiplicity="1" />
+    <End Role="Накладная" Type="Self.Накладная" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Клиенты">
+        <PropertyRef Name="Ид клиента" />
+      </Principal>
+      <Dependent Role="Накладная">
+        <PropertyRef Name="Ид клиента" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Накладная_Объекты экспертизы">
+    <End Role="Объекты экспертизы" Type="Self.Объекты экспертизы" Multiplicity="1" />
+    <End Role="Накладная" Type="Self.Накладная" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Объекты экспертизы">
+        <PropertyRef Name="Ид объекта" />
+      </Principal>
+      <Dependent Role="Накладная">
+        <PropertyRef Name="Ид объекта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Накладная_Сотрудники">
+    <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="1" />
+    <End Role="Накладная" Type="Self.Накладная" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Сотрудники">
+        <PropertyRef Name="Ид сотрудника" />
+      </Principal>
+      <Dependent Role="Накладная">
+        <PropertyRef Name="Ид сотрудника" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Техника_Объекты экспертизы">
+    <End Role="Объекты экспертизы" Type="Self.Объекты экспертизы" Multiplicity="1" />
+    <End Role="Техника" Type="Self.Техника" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Объекты экспертизы">
+        <PropertyRef Name="Ид объекта" />
+      </Principal>
+      <Dependent Role="Техника">
+        <PropertyRef Name="Ид объекта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Квитанция_Экспертиза и оценка_FK_Rule">
+    <End Role="Экспертиза и оценка" Type="Self.Экспертиза и оценка" Multiplicity="1" />
+    <End Role="Квитанция" Type="Self.Квитанция" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Экспертиза и оценка">
+        <PropertyRef Name="Ид диагностики" />
+      </Principal>
+      <Dependent Role="Квитанция">
+        <PropertyRef Name="Ид диагностики" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Недвижимость_Объекты экспертизы_FK_Rule">
+    <End Role="Объекты экспертизы" Type="Self.Объекты экспертизы" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Недвижимость" Type="Self.Недвижимость" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Объекты экспертизы">
+        <PropertyRef Name="Ид объекта" />
+      </Principal>
+      <Dependent Role="Недвижимость">
+        <PropertyRef Name="Ид объекта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Сотрудники_Отдел_FK_Rule">
+    <End Role="Отдел" Type="Self.Отдел" Multiplicity="1" />
+    <End Role="Сотрудники" Type="Self.Сотрудники" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Отдел">
+        <PropertyRef Name="Ид отдела" />
+      </Principal>
+      <Dependent Role="Сотрудники">
+        <PropertyRef Name="Ид отдела" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Экспертиза и оценка_Объекты экспертизы_FK_Rule">
+    <End Role="Объекты экспертизы" Type="Self.Объекты экспертизы" Multiplicity="1" />
+    <End Role="Экспертиза и оценка" Type="Self.Экспертиза и оценка" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Объекты экспертизы">
+        <PropertyRef Name="Ид объекта" />
+      </Principal>
+      <Dependent Role="Экспертиза и оценка">
+        <PropertyRef Name="Ид объекта" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="funcProgDohod" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="date1" Type="datetime" Mode="In" />
+    <Parameter Name="date2" Type="datetime" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Количество обработанных накладных" Type="int" />
+          <Property Name="Прогнозируемый доход" Type="money" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="funcZarplata" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Id" Type="int" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Ид_сотрудника" Type="int" />
+          <Property Name="Фамилия" Type="nvarchar" MaxLength="50" />
+          <Property Name="Зарплата" Type="money" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="procEditNaklad" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Series" Type="int" Mode="In" />
+    <Parameter Name="Nomer" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="Хранилище DB_ModelContainer">
+    <EntitySet Name="Квитанция" EntityType="Self.Квитанция" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Клиенты" EntityType="Self.Клиенты" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Накладная" EntityType="Self.Накладная" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Недвижимость" EntityType="Self.Недвижимость" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Объекты экспертизы" EntityType="Self.Объекты экспертизы" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Отдел" EntityType="Self.Отдел" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Паспорта" EntityType="Self.Паспорта" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Сотрудники" EntityType="Self.Сотрудники" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Техника" EntityType="Self.Техника" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Экспертиза и оценка" EntityType="Self.Экспертиза и оценка" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Клиенты_Паспорта" Association="Self.FK_Клиенты_Паспорта">
+      <End Role="Паспорта" EntitySet="Паспорта" />
+      <End Role="Клиенты" EntitySet="Клиенты" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Накладная_Клиенты" Association="Self.FK_Накладная_Клиенты">
+      <End Role="Клиенты" EntitySet="Клиенты" />
+      <End Role="Накладная" EntitySet="Накладная" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Накладная_Объекты экспертизы" Association="Self.FK_Накладная_Объекты экспертизы">
+      <End Role="Объекты экспертизы" EntitySet="Объекты экспертизы" />
+      <End Role="Накладная" EntitySet="Накладная" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Накладная_Сотрудники" Association="Self.FK_Накладная_Сотрудники">
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+      <End Role="Накладная" EntitySet="Накладная" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Техника_Объекты экспертизы" Association="Self.FK_Техника_Объекты экспертизы">
+      <End Role="Объекты экспертизы" EntitySet="Объекты экспертизы" />
+      <End Role="Техника" EntitySet="Техника" />
+    </AssociationSet>
+    <AssociationSet Name="Квитанция_Экспертиза и оценка_FK_Rule" Association="Self.Квитанция_Экспертиза и оценка_FK_Rule">
+      <End Role="Экспертиза и оценка" EntitySet="Экспертиза и оценка" />
+      <End Role="Квитанция" EntitySet="Квитанция" />
+    </AssociationSet>
+    <AssociationSet Name="Недвижимость_Объекты экспертизы_FK_Rule" Association="Self.Недвижимость_Объекты экспертизы_FK_Rule">
+      <End Role="Объекты экспертизы" EntitySet="Объекты экспертизы" />
+      <End Role="Недвижимость" EntitySet="Недвижимость" />
+    </AssociationSet>
+    <AssociationSet Name="Сотрудники_Отдел_FK_Rule" Association="Self.Сотрудники_Отдел_FK_Rule">
+      <End Role="Отдел" EntitySet="Отдел" />
+      <End Role="Сотрудники" EntitySet="Сотрудники" />
+    </AssociationSet>
+    <AssociationSet Name="Экспертиза и оценка_Объекты экспертизы_FK_Rule" Association="Self.Экспертиза и оценка_Объекты экспертизы_FK_Rule">
+      <End Role="Объекты экспертизы" EntitySet="Объекты экспертизы" />
+      <End Role="Экспертиза и оценка" EntitySet="Экспертиза и оценка" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

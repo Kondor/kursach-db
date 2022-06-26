@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DB_BureauExpertiseAndEvaluation.Техника>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Техника</h2>
+<br /><br />
+<p>
+    @Html.ActionLink("Добавить", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Ид_объекта)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Год_производства)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Серийный_номер)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Цена_при_покупке)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Компания_производитель)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Модель)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Объекты_экспертизы.Наименование)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ид_объекта)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Год_производства)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Серийный_номер)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Цена_при_покупке)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Компания_производитель)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Модель)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Объекты_экспертизы.Наименование)
+        </td>
+        <td>
+            @Html.ActionLink("Редактировать", "Edit", new { id=item.Ид_объекта }) |
+            @Html.ActionLink("Подробнее", "Details", new { id=item.Ид_объекта }) |
+            @Html.ActionLink("Удалить", "Delete", new { id=item.Ид_объекта })
+        </td>
+    </tr>
+}
+
+</table>

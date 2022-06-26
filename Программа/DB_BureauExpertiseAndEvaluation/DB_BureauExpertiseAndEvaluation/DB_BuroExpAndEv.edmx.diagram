@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0167a03fbb6d41c092a2640acd5ec52c" Name="Diagram1">
+        <EntityTypeShape EntityType="DB_Model.Квитанция" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Model.Клиенты" Width="1.5" PointX="0.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Model.Накладная" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Model.Недвижимость" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Model.Объекты_экспертизы" Width="1.5" PointX="0.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Model.Отдел" Width="1.5" PointX="1.5" PointY="22.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Model.Паспорта" Width="1.5" PointX="1.5" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Model.Сотрудники" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Model.Техника" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_Model.Экспертиза_и_оценка" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <AssociationConnector Association="DB_Model.Квитанция_Экспертиза_и_оценка_FK_Rule" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Model.FK_Клиенты_Паспорта" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Model.FK_Накладная_Клиенты" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Model.FK_Накладная_Объекты_экспертизы" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Model.FK_Накладная_Сотрудники" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Model.Недвижимость_Объекты_экспертизы_FK_Rule" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Model.FK_Техника_Объекты_экспертизы" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Model.Экспертиза_и_оценка_Объекты_экспертизы_FK_Rule" ManuallyRouted="false" />
+        <AssociationConnector Association="DB_Model.Сотрудники_Отдел_FK_Rule" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

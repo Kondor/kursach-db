@@ -1,0 +1,56 @@
+﻿@model DB_BureauExpertiseAndEvaluation.Квитанция
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Квитанция</h2>
+
+<h3>Вы действительно хотите удалить?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Стоимость_экспертизы)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Стоимость_экспертизы)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Оценка)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Оценка)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Решение)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Решение)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Экспертиза_и_оценка.Вид_диагностики)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Экспертиза_и_оценка.Вид_диагностики)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Удалить" class="btn btn-default" /> |
+            @Html.ActionLink("Вернуться назад", "Index")
+        </div>
+    }
+</div>

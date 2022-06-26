@@ -1,0 +1,90 @@
+﻿@model DB_BureauExpertiseAndEvaluation.Накладная
+
+@{
+    ViewBag.Title = "DetailsUser";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>Накладная</h2>
+
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Дата_приёма)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Дата_приёма)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Срок_выполнения_диагностики)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Срок_выполнения_диагностики)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Причина_обращения)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Причина_обращения)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Состояние_объекта)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Состояние_объекта)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Статус)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Статус)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Примерная_стоимость_экспертизы)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Примерная_стоимость_экспертизы)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Клиенты.Телефон)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Клиенты.Телефон)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Объекты_экспертизы.Наименование)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Объекты_экспертизы.Наименование)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Сотрудники.Фамилия)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Сотрудники.Фамилия)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Вернуться назад", "IndexUser")
+</p>
